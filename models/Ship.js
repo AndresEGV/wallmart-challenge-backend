@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const shipSchema = new Schema({
+const shipsSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -15,7 +15,6 @@ const shipSchema = new Schema({
   },
   manufacter: {
     type: String,
-    required: true,
     trim: true,
   },
   passangers: {
@@ -33,4 +32,4 @@ const shipSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Ship", shipSchema);
+module.exports = mongoose.model("Ships", shipsSchema);

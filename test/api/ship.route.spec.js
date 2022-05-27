@@ -9,7 +9,7 @@ describe("Test about starwars api", () => {
   afterAll(async () => {
     await mongoose.disconnect();
   });
-  describe("POST /api/ships", () => {
+  describe("POST /api/interstellar-ships", () => {
     const newShip = {
       name: "StarFighter",
       model: "X-wag",
@@ -18,11 +18,16 @@ describe("Test about starwars api", () => {
       starship_class: "Fighter",
       cargo_capacity: 400,
     };
-    it("route it's ok", async () => {
-      const response = await request(app).post("/api/trips").send(newShip);
+
+    it("check if route it's ok", async () => {
+      const response = await request(app)
+        .post("/api/interstellar-ships")
+        .send(newShip);
 
       expect(response.status).toBe(200);
-      expect(response.headers["content-type"]).toBe("json");
+      expect(response.headers["content-type"]).toBe(
+        "application/json; charset=utf-8"
+      );
     });
   });
 });

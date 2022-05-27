@@ -41,7 +41,6 @@ algunos campos como ejem: pilots)
 
 ## Sobre el proyecto
 
-![stack Overflow](bsale_front.png)
 Crear dos API en Node.js con sus respectivas interfaces.
 Consumir información de API de prueba StarWars API (link) y de base de
 datos.

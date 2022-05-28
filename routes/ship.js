@@ -13,11 +13,8 @@ router.post(
       .isEmpty()
       .isNumeric(),
 
-    check("starship_class", "the starship class is required").not().isEmpty(),
-    check(
-      "cargo_capacity",
-      "the cargo capacity is required and must be numeric"
-    )
+    check("starShipClass", "the starship class is required").not().isEmpty(),
+    check("cargoCapacity", "the cargo capacity is required and must be numeric")
       .not()
       .isEmpty()
       .isNumeric(),

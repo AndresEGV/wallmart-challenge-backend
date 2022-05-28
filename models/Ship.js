@@ -21,12 +21,12 @@ const shipsSchema = new Schema({
     type: Number,
     required: true,
   },
-  starship_class: {
+  starShipClass: {
     type: String,
     required: true,
     trim: true,
   },
-  cargo_capacity: {
+  cargoCapacity: {
     type: Number,
     required: true,
   },

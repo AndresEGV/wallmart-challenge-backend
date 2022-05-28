@@ -9,18 +9,9 @@ app.use(express.json());
 conectarDb();
 
 // Config of CORS
-const whitelist = [process.env.FRONTEND_URL];
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.includes(origin)) {
-      // can access to API
-      callback(null, true);
-    } else {
-      // forbidden
-      callback(new Error("Error de Cors"));
-    }
-  },
+  origin: process.env.FRONTEND_URL,
 };
 
 app.use(cors(corsOptions));

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+ */
 const request = require("supertest");
 const { app } = require("../../server");
 const conectarDb = require("../../config/db");
@@ -15,10 +18,10 @@ describe("Test about starwars api", () => {
       model: "X-wag",
       manufacter: "John Doe",
       passangers: 2,
-      starship_class: "Fighter",
-      cargo_capacity: 400,
+      starShipClass: "Fighter",
+      cargoCapacity: 400,
     };
-
+    const wrongTrip = { nombre: "StarFighter test" };
     it("check if route it's ok", async () => {
       const response = await request(app)
         .post("/api/interstellar-ships")
@@ -28,6 +31,21 @@ describe("Test about starwars api", () => {
       expect(response.headers["content-type"]).toBe(
         "application/json; charset=utf-8"
       );
+    });
+    it("insert successfully", async () => {
+      const response = await request(app)
+        .post("/api/interstellar-ships")
+        .send(newShip);
+
+      expect(response.body.msg).toBeDefined();
+    });
+    it("Error in insertion", async () => {
+      const response = await request(app)
+        .post("/api/interstellar-ships")
+        .send(wrongTrip);
+
+      expect(response.status).toBe(400);
+      expect(response.body.errors).toBeDefined();
     });
   });
 });

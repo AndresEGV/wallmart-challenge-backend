@@ -100,12 +100,14 @@ El diagrama de arquitectura se encuentra en la carpeta llamada public/img
 
 Esta es una API de consumo. Solo se utilizó el método HTTP GET.
 
-1. [api/interstellar-ships](https://bsale-test-store.herokuapp.com/api/products) Permite crear una nueva nave retornado la respuesta correspondiente
+1. [api/interstellar-ships]() Permite crear una nueva nave retornado la respuesta correspondiente
 
 ```json
 {
   "msg": "ship created successfully "
 }
 ```
+
+2. [/api-doc]() Permite ver la documentación de la API creada en swagger
 
 <p align="right">(<a href="#top">back to top</a>)</p>
